@@ -1,55 +1,82 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    public float maxSpeed = 200f;
-    public float acceleration = 10f;
-    public float turnSensitivity = 1f;
+    private float horizontalInput, verticalInput;
+    private float currentSteerAngle, currentbreakForce;
+    private bool isBreaking;
 
-    public WheelCollider frontLeftWheelCollider;
-    public WheelCollider frontRightWheelCollider;
-    public WheelCollider rearLeftWheelCollider;
-    public WheelCollider rearRightWheelCollider;
+    // Settings
+    [SerializeField] private float motorForce, breakForce, maxSteerAngle;
 
-    private Rigidbody rb;
+    // Wheel Colliders
+    [SerializeField] private WheelCollider frontLeftWheelCollider, frontRightWheelCollider;
+    [SerializeField] private WheelCollider rearLeftWheelCollider, rearRightWheelCollider;
 
-    void Start()
+    // Wheels
+    [SerializeField] private Transform frontLeftWheelTransform, frontRightWheelTransform;
+    [SerializeField] private Transform rearLeftWheelTransform, rearRightWheelTransform;
+
+    private void FixedUpdate()
     {
-        rb = GetComponent<Rigidbody>();
+        GetInput();
+        HandleMotor();
+        HandleSteering();
+        UpdateWheels();
     }
 
-    void FixedUpdate()
+    private void GetInput()
     {
-        HandleMovement();
+        // Steering Input
+        horizontalInput = Input.GetAxis("Horizontal");
+
+        // Acceleration Input
+        verticalInput = Input.GetAxis("Vertical");
+
+        // Breaking Input
+        isBreaking = Input.GetKey(KeyCode.Space);
     }
 
-    void HandleMovement()
+    private void HandleMotor()
     {
-        float moveInput = Input.GetAxis("Vertical");
-        float turnInput = Input.GetAxis("Horizontal");
-
-        Vector3 forwardMove = transform.forward * moveInput * acceleration;
-        rb.AddForce(forwardMove, ForceMode.Acceleration);
-
-        if (rb.velocity.magnitude < maxSpeed)
-        {
-            rb.AddForce(forwardMove, ForceMode.Acceleration);
-        }
-
-        Vector3 turn = transform.up * turnInput * turnSensitivity;
-        rb.AddTorque(turn, ForceMode.VelocityChange);
-
-        ApplyWheelForces(moveInput, turnInput);
+        frontLeftWheelCollider.motorTorque = verticalInput * motorForce;
+        frontRightWheelCollider.motorTorque = verticalInput * motorForce;
+        currentbreakForce = isBreaking ? breakForce : 0f;
+        ApplyBreaking();
     }
 
-    void ApplyWheelForces(float moveInput, float turnInput)
+    private void ApplyBreaking()
     {
-        frontLeftWheelCollider.motorTorque = moveInput * acceleration;
-        frontRightWheelCollider.motorTorque = moveInput * acceleration;
+        frontRightWheelCollider.brakeTorque = currentbreakForce;
+        frontLeftWheelCollider.brakeTorque = currentbreakForce;
+        rearLeftWheelCollider.brakeTorque = currentbreakForce;
+        rearRightWheelCollider.brakeTorque = currentbreakForce;
+    }
 
-        frontLeftWheelCollider.steerAngle = turnInput * turnSensitivity;
-        frontRightWheelCollider.steerAngle = turnInput * turnSensitivity;
+    private void HandleSteering()
+    {
+        currentSteerAngle = maxSteerAngle * horizontalInput;
+        frontLeftWheelCollider.steerAngle = currentSteerAngle;
+        frontRightWheelCollider.steerAngle = currentSteerAngle;
+    }
+
+    private void UpdateWheels()
+    {
+        UpdateSingleWheel(frontLeftWheelCollider, frontLeftWheelTransform);
+        UpdateSingleWheel(frontRightWheelCollider, frontRightWheelTransform);
+        UpdateSingleWheel(rearRightWheelCollider, rearRightWheelTransform);
+        UpdateSingleWheel(rearLeftWheelCollider, rearLeftWheelTransform);
+    }
+
+    private void UpdateSingleWheel(WheelCollider wheelCollider, Transform wheelTransform)
+    {
+        Vector3 pos;
+        Quaternion rot;
+        wheelCollider.GetWorldPose(out pos, out rot);
+        wheelTransform.rotation = rot;
+        wheelTransform.position = pos;
     }
 }
