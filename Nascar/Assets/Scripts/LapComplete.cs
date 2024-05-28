@@ -38,7 +38,7 @@ public class LapComplete : MonoBehaviour
             MinuteDisplay.GetComponent<TextMeshProUGUI>().text = "" + LapTimeManager.MinuteCount + ".";
         }
 
-        MilliDisplay.GetComponent<TextMeshProUGUI>().text = "" + LapTimeManager.MilliCount;
+        MilliDisplay.GetComponent<TextMeshProUGUI>().text = "" + LapTimeManager.MilliCount.ToString("F0");
 
         LapTimeManager.MinuteCount = 0;
         LapTimeManager.SecondCount = 0;
