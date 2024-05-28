@@ -13,6 +13,8 @@ public class Smoke : MonoBehaviour
             Debug.LogError("Please assign exactly 4 WheelColliders and 4 ParticleSystems.");
             return;
         }
+        smokeParticles[0].Stop();
+        smokeParticles[1].Stop();
     }
 
     void Update()
@@ -23,7 +25,7 @@ public class Smoke : MonoBehaviour
             if (wheelColliders[i].isGrounded && (Input.GetKeyDown(KeyCode.D) || (Input.GetKeyDown(KeyCode.A))))
             {
                 // Enable smoke if the wheel is grounded and speed is above a threshold
-                if (Mathf.Abs(wheelColliders[i].rpm) > 400) // Adjust the speed threshold as needed
+                if (Mathf.Abs(wheelColliders[i].rpm) >700 ) // Adjust the speed threshold as needed
                 {
                     if (!smokeParticles[i].isPlaying)
                     {
@@ -33,14 +35,7 @@ public class Smoke : MonoBehaviour
                 }
                 
             }
-            else
-            {
-                if (smokeParticles[i].isPlaying)
-                {
-                    Debug.Log($"Stopping smoke for wheel {i} due to not grounded");
-                    smokeParticles[i].Stop();
-                }
-            }
+            
         }
     }
 }
