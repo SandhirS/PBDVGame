@@ -37,8 +37,8 @@ public class LapTimeManager : MonoBehaviour
 
     void Update()
     {
-        MilliCount += (Time.deltaTime * 10);
-        MilliDisplay = MilliCount.ToString("F1");
+        MilliCount += Time.deltaTime * 10;
+        MilliDisplay = MilliCount.ToString("F0");
 
         // Update MilliBox text if available
         if (MilliBox != null)
