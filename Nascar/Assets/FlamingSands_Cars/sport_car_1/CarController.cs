@@ -10,7 +10,7 @@ public class CarController : MonoBehaviour
     private bool isBreaking;
 
     // Settings
-    [SerializeField] private float motorForce, breakForce, maxSteerAngle;
+    [SerializeField] public float motorForce, breakForce, maxSteerAngle;
 
     // Wheel Colliders
     [SerializeField] private WheelCollider frontLeftWheelCollider, frontRightWheelCollider;
@@ -78,5 +78,15 @@ public class CarController : MonoBehaviour
         wheelCollider.GetWorldPose(out pos, out rot);
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
+    }
+
+     public void SetMotorForce(float newMotorForce)
+    {
+        motorForce = newMotorForce;
+    }
+
+     public float GetMotorForce()
+    {
+        return motorForce;
     }
 }
