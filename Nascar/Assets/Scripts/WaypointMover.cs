@@ -1,19 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CircuitRaceMover : MonoBehaviour
+public class Waypointmover : MonoBehaviour
 {
-<<<<<<< Updated upstream
-    [SerializeField] private EnemyAIWaypoint waypoints;
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float distanceThreshold=0.1f;
-    private Transform currentWaypoint;
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentWaypoint=waypoints.GetNextWaypoint(currentWaypoint);
-        transform.position=currentWaypoint.position;
-=======
     [SerializeField] private List<Transform> waypoints; // List of waypoints
     [SerializeField] private float moveSpeed = 5f; // Speed of the car
     [SerializeField] private float distanceThreshold = 0.1f; // Distance threshold to consider waypoint reached
@@ -30,7 +19,6 @@ public class CircuitRaceMover : MonoBehaviour
             Debug.LogError("Please assign waypoints to the car.");
             return;
         }
->>>>>>> Stashed changes
 
         // Set the car's initial position to the first waypoint
         transform.position = waypoints[currentWaypointIndex].position;
@@ -40,18 +28,6 @@ public class CircuitRaceMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream
-        transform.position=Vector3.MoveTowards(transform.position,currentWaypoint.position,moveSpeed*Time.deltaTime);
-        if(Vector3.Distance(transform.position,currentWaypoint.position)<distanceThreshold)
-        {
-             currentWaypoint=waypoints.GetNextWaypoint(currentWaypoint);
-             transform.LookAt(currentWaypoint);
-
-        } 
-        
-    }
-}
-=======
         if (currentLap >= maxLap && currentWaypointIndex == 0) return; // Stop moving after completing the specified number of laps
 
         MoveTowardsWaypoint();
@@ -97,4 +73,3 @@ public class CircuitRaceMover : MonoBehaviour
         }
     }
 }
->>>>>>> Stashed changes
