@@ -5,19 +5,19 @@ using UnityEngine;
 
 public class SpeedPowerup : MonoBehaviour
 {
-    public Camera CameraFov;
+   
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(UnityEngine.Collider other)
     {
-        CarController carController = other.GetComponent<CarController>();
         
-        if (other.name == "BMW E30 " )
-        {
-             CameraFov.fieldOfView =100;//make camera look faster from car pov
+        
+       
+        Rigidbody gushesh = other.GetComponent<Rigidbody>();
+            
              
            
-             float newMotorForce = carController.motorForce * 1.5f;
-             carController.SetMotorForce(newMotorForce);
+             Rigidbody m3 = gushesh.GetComponent<Rigidbody>();
+             m3.AddForce(gushesh.transform.forward * 500000);
              
             
            /* if (carController != null)
@@ -29,7 +29,7 @@ public class SpeedPowerup : MonoBehaviour
 
             
          
-        }
+        
         Destroy(gameObject);
 
     } 

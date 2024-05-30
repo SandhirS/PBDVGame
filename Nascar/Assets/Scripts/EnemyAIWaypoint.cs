@@ -21,8 +21,8 @@ public class EnemyAIWaypoint : MonoBehaviour
             Gizmos.DrawLine(transform.GetChild(i).position, transform.GetChild(i + 1).position);
         }
 
-        Gizmos.DrawLine(transform.GetChild(transform.childCount-1).position, transform.GetChild(0).position);  
-      
+        Gizmos.DrawLine(transform.GetChild(transform.childCount-1).position, transform.GetChild(0).position);
+
     }
 
     public Transform GetNextWaypoint(Transform currentWaypoint)
@@ -41,7 +41,7 @@ public class EnemyAIWaypoint : MonoBehaviour
             return transform.GetChild(0); 
         }
     }
-   
+
 
 
 
