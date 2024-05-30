@@ -11,6 +11,18 @@ public class DifficultyMenu : MonoBehaviour
         SceneManager.LoadScene(sceneIndex);
     }
 
+    public void QuitGame()
+    {
+        // Log message for debugging purposes
+        Debug.Log("Quit Game");
 
+        // Quit the application
+        Application.Quit();
+
+        // If running in the editor, stop playing
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
 
 }
