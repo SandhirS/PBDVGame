@@ -22,7 +22,7 @@ public class Smoke : MonoBehaviour
         for (int i = 0; i < wheelColliders.Length; i++)
         {
             
-            if (wheelColliders[i].isGrounded && (Input.GetKeyDown(KeyCode.D) || (Input.GetKeyDown(KeyCode.A))))
+            if (wheelColliders[i].isGrounded && (Input.GetKeyDown(KeyCode.LeftShift) || (Input.GetKeyDown(KeyCode.A))))
             {
                 
                 if (Mathf.Abs(wheelColliders[i].rpm) >700 )
