@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.026531557, g: 0.29323432, b: 0.48756313, a: 1}
+  m_IndirectSpecularColor: {r: 0.026693266, g: 0.29309753, b: 0.4874039, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -179,7 +179,7 @@ Transform:
   m_GameObject: {fileID: 171837134}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 132.2, y: -1.91, z: -8.1}
+  m_LocalPosition: {x: 132.2, y: -2.68, z: -8.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -238,7 +238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f100c1b141808dd4e988331017e95775, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 282.317
+      value: 271.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f100c1b141808dd4e988331017e95775, type: 3}
       propertyPath: m_LocalPosition.y
@@ -246,7 +246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f100c1b141808dd4e988331017e95775, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 178.9
+      value: 178.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f100c1b141808dd4e988331017e95775, type: 3}
       propertyPath: m_LocalRotation.w
@@ -345,7 +345,7 @@ MonoBehaviour:
   - {fileID: 713386127}
   - {fileID: 758384055}
   - {fileID: 1900843614}
-  moveSpeed: 7.85
+  moveSpeed: 20
   distanceThreshold: 0.1
 --- !u!54 &179544849
 Rigidbody:
@@ -2185,6 +2185,10 @@ PrefabInstance:
       propertyPath: SecondDisplay
       value: 
       objectReference: {fileID: 1261823894}
+    - target: {fileID: 8421990775859720386, guid: b6a041e829a28124f851bbc16006a242, type: 3}
+      propertyPath: allowedCarTag
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2679,7 +2683,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f100c1b141808dd4e988331017e95775, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 297.25
+      value: 273
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f100c1b141808dd4e988331017e95775, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2687,7 +2691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f100c1b141808dd4e988331017e95775, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 165.2
+      value: 164.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f100c1b141808dd4e988331017e95775, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2922,15 +2926,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca84420dabb1f2945a02cef86ae9a407, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 282.69
+      value: 257.68
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca84420dabb1f2945a02cef86ae9a407, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 375.27
+      value: 375.36
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca84420dabb1f2945a02cef86ae9a407, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 164.31
+      value: 162.48
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca84420dabb1f2945a02cef86ae9a407, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3091,7 +3095,7 @@ MonoBehaviour:
   - {fileID: 713386127}
   - {fileID: 758384055}
   - {fileID: 1900843614}
-  moveSpeed: 12.49
+  moveSpeed: 15
   distanceThreshold: 0.1
 --- !u!65 &940623102
 BoxCollider:
@@ -3100,7 +3104,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 940623098}
-  m_Material: {fileID: 13400000, guid: 673494b29a48e0d4fa346077a582ea56, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3202,7 +3206,7 @@ Transform:
   m_GameObject: {fileID: 1067432845}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.6, y: -3.26, z: -13.6}
+  m_LocalPosition: {x: -15.81, y: -1.7, z: -13.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4473,6 +4477,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BMW E30
       objectReference: {fileID: 0}
+    - target: {fileID: 1457787550870474414, guid: 0ddc338c47723de48a10d200e9944d73, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4615332390353241868, guid: 0ddc338c47723de48a10d200e9944d73, type: 3}
       propertyPath: m_SuspensionSpring.spring
       value: 120000
@@ -5158,7 +5166,7 @@ MonoBehaviour:
   - {fileID: 713386127}
   - {fileID: 758384055}
   - {fileID: 1900843614}
-  moveSpeed: 16.7
+  moveSpeed: 25
   distanceThreshold: 0.1
 --- !u!65 &1417171197
 BoxCollider:
@@ -7309,7 +7317,7 @@ Transform:
   m_GameObject: {fileID: 1900843613}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.2, y: -3.26, z: -9.9}
+  m_LocalPosition: {x: -30.73, y: -3.4, z: -9.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -22,7 +22,7 @@ public class PauseMenu2 : MonoBehaviour
 
     public void LoadPreviousScene()
     {
-        // Assuming the previous scene index is 0
+        
         SceneManager.LoadScene(2);
     }
 }

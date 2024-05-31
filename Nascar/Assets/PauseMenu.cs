@@ -25,19 +25,17 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadPreviousScene()
     {
-        // Assuming the previous scene index is 0
+        
         SceneManager.LoadScene(2);
     }
 
     public void QuitGame()
     {
-        // Log message for debugging purposes
-        Debug.Log("Quit Game");
 
-        // Quit the application
+   
         Application.Quit();
 
-        // If running in the editor, stop playing
+        
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif

@@ -3,15 +3,14 @@ using UnityEngine;
 
 public class Waypointmover : MonoBehaviour
 {
-    [SerializeField] private List<Transform> waypoints; // List of waypoints
-    [SerializeField] private float moveSpeed = 5f; // Speed of the car
-    [SerializeField] private float distanceThreshold = 0.1f; // Distance threshold to consider waypoint reached
+    [SerializeField] private List<Transform> waypoints;
+    [SerializeField] private float moveSpeed = 5f; 
+    [SerializeField] private float distanceThreshold = 0.1f; 
+    private int currentWaypointIndex = 0; 
+    private int currentLap = 0; 
+    private int maxLap = 3; 
 
-    private int currentWaypointIndex = 0; // Index of the current waypoint
-    private int currentLap = 0; // Current lap
-    private int maxLap = 3; // Total number of laps
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         if (waypoints == null || waypoints.Count == 0)
@@ -20,15 +19,15 @@ public class Waypointmover : MonoBehaviour
             return;
         }
 
-        // Set the car's initial position to the first waypoint
+        
         transform.position = waypoints[currentWaypointIndex].position;
         MoveToNextWaypoint();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        if (currentLap >= maxLap && currentWaypointIndex == 0) return; // Stop moving after completing the specified number of laps
+        if (currentLap >= maxLap && currentWaypointIndex == 0) return;
 
         MoveTowardsWaypoint();
         CheckIfWaypointReached();
@@ -53,7 +52,7 @@ public class Waypointmover : MonoBehaviour
                 currentWaypointIndex = 0;
                 currentLap++;
 
-                // Only stop if the lap count reaches maxLap and we are at the first waypoint
+                
                 if (currentLap >= maxLap)
                 {
                     Debug.Log("Completed all laps. Stopping at the first waypoint.");

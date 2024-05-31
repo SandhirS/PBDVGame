@@ -6,21 +6,21 @@ using System.Linq;
 
 public class RankingScreen : MonoBehaviour
 {
-    public Rigidbody[] cars; // Array to hold the Rigidbody components of the cars
-    public Text[] rankingTexts; // Array to hold the Text components for the rankings
+    public Rigidbody[] cars; 
+    public Text[] rankingTexts; 
 
     void Update()
     {
-        // Ensure there are cars to rank and ranking texts available
+        
         if (cars.Length == 0 || rankingTexts.Length == 0) return;
 
-        // Sort the cars based on their distance traveled along the z-axis
+        
         var sortedCars = cars.OrderByDescending(car => car.position.z).ToArray();
 
-        // Reverse the rankingTexts array to ensure the 1st place is at the top
+        
         var reversedRankingTexts = rankingTexts.Reverse().ToArray();
 
-        // Update the ranking texts, but only up to the minimum of cars or rankingTexts length
+        
         int count = Mathf.Min(sortedCars.Length, rankingTexts.Length);
 
         for (int i = 0; i < count; i++)
@@ -28,14 +28,14 @@ public class RankingScreen : MonoBehaviour
             reversedRankingTexts[i].text = $"{i + 1}{GetOrdinal(i + 1)} Place: {sortedCars[i].name}";
         }
 
-        // Clear any remaining ranking texts if there are more texts than cars
+        
         for (int i = count; i < rankingTexts.Length; i++)
         {
             reversedRankingTexts[i].text = "";
         }
     }
 
-    // Helper function to get ordinal suffix
+    
     string GetOrdinal(int number)
     {
         if (number <= 0) return string.Empty;

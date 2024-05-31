@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.32687682, g: 0.2896285, b: 0.32220337, a: 1}
+  m_IndirectSpecularColor: {r: 0.3270211, g: 0.28962654, b: 0.32214934, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -478,6 +478,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1142897130331111397, guid: 0ddc338c47723de48a10d200e9944d73, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumSlip
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1457787550870261130, guid: 0ddc338c47723de48a10d200e9944d73, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4809.3
@@ -522,6 +526,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: BMW E30 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1457787550870474414, guid: 0ddc338c47723de48a10d200e9944d73, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615332390353241868, guid: 0ddc338c47723de48a10d200e9944d73, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumSlip
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863359122283209546, guid: 0ddc338c47723de48a10d200e9944d73, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumSlip
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7728763074698613846, guid: 0ddc338c47723de48a10d200e9944d73, type: 3}
       propertyPath: m_Name
       value: CamSection1
@@ -529,6 +545,10 @@ PrefabInstance:
     - target: {fileID: 8229745837560784186, guid: 0ddc338c47723de48a10d200e9944d73, type: 3}
       propertyPath: MinDistance
       value: 0.96191406
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076713178530997837, guid: 0ddc338c47723de48a10d200e9944d73, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumSlip
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1333,7 +1353,7 @@ MonoBehaviour:
   - {fileID: 9332408}
   - {fileID: 493751357}
   - {fileID: 1485417115}
-  moveSpeed: 20.3
+  moveSpeed: 22
   distanceThreshold: 0.1
 --- !u!65 &324244752
 BoxCollider:
@@ -1354,8 +1374,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.35890198, z: 3.2235909}
-  m_Center: {x: -0.00000012059637, y: 0.320549, z: -0.046989143}
+  m_Size: {x: 1, y: 0.81466675, z: 3.2235909}
+  m_Center: {x: -0.00000012268478, y: 0.6993103, z: -0.046989206}
 --- !u!54 &324244753
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1891,7 +1911,7 @@ MonoBehaviour:
   - {fileID: 9332408}
   - {fileID: 493751357}
   - {fileID: 1485417115}
-  moveSpeed: 30
+  moveSpeed: 26
   distanceThreshold: 0.1
 --- !u!65 &519418707
 BoxCollider:
@@ -4474,6 +4494,10 @@ PrefabInstance:
       propertyPath: SecondDisplay
       value: 
       objectReference: {fileID: 2019401881}
+    - target: {fileID: 8421990775859720386, guid: b6a041e829a28124f851bbc16006a242, type: 3}
+      propertyPath: allowedCarTag
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6339,8 +6363,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709071657}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12580618, y: 0.49416342, z: -0.07252925, w: 0.8571551}
-  m_LocalPosition: {x: 4802.0137, y: 190.79753, z: 8504.262}
+  m_LocalRotation: {x: 0.096670285, y: 0.68505126, z: -0.0924781, w: 0.71610576}
+  m_LocalPosition: {x: 287.4039, y: 378.6897, z: 178.45314}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6827,8 +6851,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.35890198, z: 3.2235909}
-  m_Center: {x: -0.00000012059637, y: 0.320549, z: -0.046989143}
+  m_Size: {x: 1, y: 0.81044006, z: 4.6601415}
+  m_Center: {x: -0.0000017905144, y: 0.71904755, z: -0.23080802}
 --- !u!54 &1838767582
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6925,7 +6949,7 @@ MonoBehaviour:
   - {fileID: 9332408}
   - {fileID: 493751357}
   - {fileID: 1485417115}
-  moveSpeed: 30.6
+  moveSpeed: 15
   distanceThreshold: 0.1
 --- !u!1 &1875915068
 GameObject:

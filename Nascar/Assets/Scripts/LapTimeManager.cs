@@ -1,5 +1,5 @@
 using UnityEngine;
-using TMPro; // Import TextMeshPro namespace
+using TMPro; 
 using UnityEngine.UI;
 
 public class LapTimeManager : MonoBehaviour
@@ -15,12 +15,12 @@ public class LapTimeManager : MonoBehaviour
 
     void Start()
     {
-        // Log the assignment of the GameObjects
+        
         Debug.Log("MinuteBox assigned: " + (MinuteBox != null));
         Debug.Log("SecondBox assigned: " + (SecondBox != null));
         Debug.Log("MilliBox assigned: " + (MilliBox != null));
 
-        // Check if the Text components are assigned correctly
+        
         if (MinuteBox != null && MinuteBox.GetComponent<TextMeshProUGUI>() == null)
         {
             Debug.LogError("MinuteBox does not have a TextMeshProUGUI component.");
@@ -40,7 +40,7 @@ public class LapTimeManager : MonoBehaviour
         MilliCount += Time.deltaTime * 10;
         MilliDisplay = MilliCount.ToString("F0");
 
-        // Update MilliBox text if available
+        
         if (MilliBox != null)
         {
             TextMeshProUGUI milliText = MilliBox.GetComponent<TextMeshProUGUI>();
@@ -60,7 +60,7 @@ public class LapTimeManager : MonoBehaviour
             SecondCount += 1;
         }
 
-        // Update SecondBox text based on SecondCount value
+        
         if (SecondBox != null)
         {
             TextMeshProUGUI secondText = SecondBox.GetComponent<TextMeshProUGUI>();
@@ -87,7 +87,7 @@ public class LapTimeManager : MonoBehaviour
             MinuteCount += 1;
         }
 
-        // Update MinuteBox text based on MinuteCount value
+        
         if (MinuteBox != null)
         {
             TextMeshProUGUI minuteText = MinuteBox.GetComponent<TextMeshProUGUI>();

@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class ResetCarPosition : MonoBehaviour
 {
-    public Rigidbody carRigidbody; // The Rigidbody component of the car
+    public Rigidbody carRigidbody; 
  
     void Start()
     {
-        // Ensure the Rigidbody component is assigned
+        
         if (carRigidbody == null)
         {
-            Debug.LogError("Please assign the Rigidbody component.");
+            Debug.LogError("missing RigidBody");
         }
     }
  
     void Update()
     {
-        // Check if the R key is pressed
+        
         if (Input.GetKeyDown(KeyCode.R))
         {
             ResetPositionAndRotation();

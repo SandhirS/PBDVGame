@@ -6,14 +6,14 @@ public class Speedo : MonoBehaviour
 {
     public Rigidbody target;
 
-    public float maxSpeed = 240f; // The maximum speed of the target ** IN KM/H **
+    public float maxSpeed = 240f; 
 
     public float minSpeedArrowAngle;
     public float maxSpeedArrowAngle;
 
     [Header("UI")]
 
-    public RectTransform arrow; // The arrow in the speedometer
+    public RectTransform arrow;
 
     private float speed = 0.0f;
     private void Update()

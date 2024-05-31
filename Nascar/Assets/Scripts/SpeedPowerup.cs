@@ -17,13 +17,7 @@ public class SpeedPowerup : MonoBehaviour
              
            
              Rigidbody m3 = gushesh.GetComponent<Rigidbody>();
-             m3.AddForce(gushesh.transform.forward * 500000);
-             
-            
-           /* if (carController != null)
-            {
-                
-            }*/
+             m3.AddForce(gushesh.transform.forward * 500000);                  
 
             
 

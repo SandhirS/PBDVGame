@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Nitro
 {
-    // Start is called before the first frame update
+    
 
     public Nitro() { }
     public void boooooost(GameObject gushesh, float amt)
