@@ -500,10 +500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cars:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1314856638}
   - {fileID: 0}
   - {fileID: 0}
   rankingTexts:

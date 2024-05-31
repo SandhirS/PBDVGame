@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LapComplete : MonoBehaviour
 {
@@ -47,5 +48,7 @@ public class LapComplete : MonoBehaviour
 
         HalfLapTrig.SetActive(true);
         LapCompleteTrig.SetActive(false);
+
+        if (LapsDone >= 3) { SceneManager.LoadScene(6); }
     }
 }
